@@ -1,0 +1,21 @@
+# leetcode
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        int f[26]={0},sec[26]={0},c=0;
+        while(s[c]!='\0'){
+            f[s[c]-'a']++;
+            c++;
+        }
+        c=0;
+        while(t[c]!='\0'){
+            sec[t[c]-'a']++;
+            c++;
+        }
+        for(c=0;c<26;c++){
+            if(f[c] != sec[c])
+                return false;
+        }
+            return true;
+    }
+};
